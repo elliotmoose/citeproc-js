@@ -21006,7 +21006,8 @@ CSL.Util.PageRangeMangler.getFunction = function (state, rangeType) {
     };
 
     listify = function (str) {
-        var m, lst, ret;
+        // Declare pos and len locally: expand() reads the closure's pos and len.
+        var m, lst, ret, pos, len;
         // Normalized delimiter form, for use in regexps
         var hyphens = "\\s+\\-\\s+";
         // Normalize delimiters to hyphen wrapped in single spaces
